@@ -212,12 +212,10 @@
                     <form role="form">
                         <fieldset>
                             <div class="form-group">
-                                <input class="form-control" placeholder="E-mail" name="email" type="email"
-                                       autofocus>
+                                <input class="form-control" id="_email" placeholder="E-mail" type="email" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="Password" name="password"
-                                       type="password" value="">
+                                <input class="form-control" id="_password" placeholder="Password" type="password">
                             </div>
                             <div class="checkbox">
                                 <label>
@@ -226,7 +224,7 @@
                             </div>
                             <ul class="list-inline intro-social-buttons">
                                 <li>
-                                    <a href="admin.php" class="btn btn-default">Login</a>
+                                    <input class="btn btn-primary" id="submitbutton" type="button" value="Login" name="submit" onclick='loginRequest($("#_email").val(), $("#_password").val());'/>
                                 </li>
                             </ul>
                             <div id="comments">
