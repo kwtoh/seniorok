@@ -1,13 +1,38 @@
-$(function() {
+function islogout()
+{
+	$.getJSON(
+			"logout.php"
+	)
+	.done(function(data){
+		window.location.replace("index.php");
+	});
+}
 
-    $('#side-menu').metisMenu();
-
-});
+function checkSession()
+{
+    $.getJSON(
+            "session.php"
+    )
+    .done(function(data){
+        if(!data['session'])
+        {
+            window.location.replace("index.php");
+        }
+        else
+        {
+            document.getElementById("cur_user").innerHTML = data['username'];
+            var img_link = "img/users/" + data['img_src'];
+            $('#cur_user_img').attr('src',img_link);
+        }
+    });
+}
 
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size
 $(function() {
+     checkSession();
+
     $(window).bind("load resize", function() {
         topOffset = 50;
         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
@@ -29,6 +28,10 @@
     <!-- Custom Fonts -->
     <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <script src="js/sb-admin-2.js">
+         checkSession();
+    </script>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -53,13 +56,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php">Senior<b>Ok</b></a>
-                <a class="navbar-brand navbar-brand-center" href="javascript:void(0);" onclick="loginHide();"><span><img src="img/seniorok-logo-small.png"></span></a>
+                <a class="navbar-brand navbar-brand-center" href="javascript:void(0);"><span><img src="img/seniorok-logo-small.png"></span></a>
             </div>
             <!-- /.navbar-header -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.php">Logout</a>
+                        <a href="javascript:void(0);"><span style="padding: 0px 10px 0px 0px;"><img id="cur_user_img" src=""></span><span id="cur_user"></span></a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);" onclick='islogout();'>Logout</a>
                     </li>
                 </ul>
             </div>
@@ -264,3 +270,4 @@
 </body>
 
 </html>
+

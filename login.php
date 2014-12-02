@@ -25,7 +25,7 @@
 
         if(isset($user)&&isset($pass))
         {
-            $sql = 'SELECT username, password, email FROM users';
+            $sql = 'SELECT username, password, email, profile_picture FROM users';
             mysql_select_db('seniorok');
             $retval = mysql_query( $sql, $conn );
             if(! $retval )
@@ -41,6 +41,8 @@
                 {
                     $reply["login"] = true;
                     $_SESSION['Login'] = true;
+                    $_SESSION['user'] = $row['username'];
+                    $_SESSION['img_src'] = $row['profile_picture'];
                 }
             }
         }
