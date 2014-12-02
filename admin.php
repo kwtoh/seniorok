@@ -52,13 +52,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Senior<b>Ok</b></a>
+                <a class="navbar-brand" href="index.php">Senior<b>Ok</b></a>
+                <a class="navbar-brand navbar-brand-center" href="javascript:void(0);" onclick="loginHide();"><span><img src="img/seniorok-logo-small.png"></span></a>
             </div>
             <!-- /.navbar-header -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Logout</a>
+                        <a href="index.php">Logout</a>
                     </li>
                 </ul>
             </div>

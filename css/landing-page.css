@@ -12,6 +12,10 @@ html {
     font-family: 'Open Sans', sans-serif;
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 body,
 h1,
 h2,

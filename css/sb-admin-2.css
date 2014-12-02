@@ -360,3 +360,7 @@ table.dataTable thead .sorting:after {
     background-color: #389bd8;
     border-color: #389bd8;
 }
+
+.navbar-brand-center{
+    padding-top: 5px;
+}

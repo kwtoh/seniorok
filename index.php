@@ -226,7 +226,7 @@
                             </div>
                             <ul class="list-inline intro-social-buttons">
                                 <li>
-                                    <a href="admin.html" class="btn btn-default">Login</a>
+                                    <a href="admin.php" class="btn btn-default">Login</a>
                                 </li>
                             </ul>
                         </fieldset>
