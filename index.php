@@ -229,6 +229,8 @@
                                     <a href="admin.php" class="btn btn-default">Login</a>
                                 </li>
                             </ul>
+                            <div id="comments">
+                            </div>
                         </fieldset>
                     </form>
                 </div>

@@ -14,3 +14,7 @@ function loginPanelShow(){
 	$('#loginheader').hide();
 	$('#loginpanel').show();
 }
+
+function loginCheck(){
+
+}
