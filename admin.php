@@ -1,3 +1,12 @@
+<?php
+    require 'config.inc';
+    session_save_path("session");
+    session_start();
+    if($_SESSION['Login'] == false)
+    {
+       header("Location:index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,10 +36,6 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome-4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-    <script src="js/sb-admin-2.js">
-         checkSession();
-    </script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
