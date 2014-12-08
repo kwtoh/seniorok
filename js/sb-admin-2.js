@@ -27,6 +27,40 @@ function checkSession()
     });
 }
 
+function changeView(view){
+    switch(view){
+        case "Profile":
+            {
+                $('#admin-dropdown-text').html("Profile <span class='caret'></span>");
+                $('#dropdown-header').html("<h1>Profile</h1>");
+                $('#chat-messages').hide();
+                $('#charts').hide();
+                $('#customer-profile').show();
+            }
+            break;
+        case "Stats":
+            {
+                $('#admin-dropdown-text').html("Stats <span class='caret'></span>");
+                $('#dropdown-header').html("<h1>Stats</h1>");
+                $('#chat-messages').hide();
+                $('#charts').show();
+                $('#customer-profile').hide();
+            }
+            break;
+        case "Messages":
+            {
+                $('#admin-dropdown-text').html("Messages <span class='caret'></span>");
+                $('#dropdown-header').html("<h1>Messages</h1>");
+                $('#chat-messages').show();
+                $('#charts').hide();
+                $('#customer-profile').hide();
+            }
+            break;
+        default:
+            break;
+    }
+}
+
 //Loads the correct sidebar on window load,
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size

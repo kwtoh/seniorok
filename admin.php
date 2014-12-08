@@ -84,24 +84,36 @@
 
 <div id="page-wrapper">
 
-    <div class="page-header">
+    <div class="page-header" id="dropdown-header">
         <h1>Stats</h1>
+    </div>
+    <div class="btn-group" id="admin-dropdown">
+      <button type="button" class="btn btn-default dropdown-toggle" id="admin-dropdown-text" data-toggle="dropdown" aria-expanded="false">
+        Stats <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><a href="javascript:void(0);" onclick="changeView('Profile')">Profile</a></li>
+        <li><a href="javascript:void(0);" onclick="changeView('Stats');">Stats</a></li>
+        <li><a href="javascript:void(0);" onclick="changeView('Messages');">Messages</a></li>
+      </ul>
     </div>
     <!-- /.row -->
     <div class="row">
-        <div class="col-lg-6">
-            <h3>Happiness</h3>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-                <div id="morris-area-chart"></div>
+        <div id="charts">
+            <div class="col-lg-6">
+                <h3>Happiness</h3>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div id="morris-area-chart"></div>
+                </div>
             </div>
-        </div>
 
-        <div class="col-lg-6">
-            <h3>Medication Missed</h3>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-                <div id="morris-area-chart2"></div>
+            <div class="col-lg-6">
+                <h3>Medication Missed</h3>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div id="morris-area-chart2"></div>
+                </div>
             </div>
         </div>
         <!-- /.panel-body -->
@@ -109,7 +121,7 @@
 
         <!-- /.col-lg-8 -->
 
-        <div class="chat-panel panel panel-default" style="display:none;">
+        <div class="chat-panel panel panel-default" id="chat-messages" style="display:none;">
             <div class="panel-heading">
                 <i class="fa fa-comments fa-fw"></i>
                 Chat
@@ -228,6 +240,7 @@
                     </li>
                 </ul>
             </div>
+
             <!-- /.panel-body -->
             <div class="panel-footer">
                 <div class="input-group">
@@ -240,8 +253,45 @@
                                 </span>
                 </div>
             </div>
-            <!-- /.panel-footer -->
         </div>
+
+        <div class="panel panel-info" id="customer-profile" style="display:none;">
+            <div class="panel-heading">
+                <h3 class="panel-title">Margaret Tan Mei Ling</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 " align="center">
+                        <img alt="User Pic" src="" class="img-circle">
+                    </div>
+                <div class=" col-md-9 col-lg-9 ">
+                    <table class="table table-user-information">
+                        <tbody>
+                            <tr>
+                                <td>Age:</td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth</td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                            </tr>
+                            <tr>
+                                <td>Home Address</td>
+                            </tr>
+                            <tr>
+                                <td>NOK Email</td>
+                            </tr>
+                            <tr>
+                                <td>NOK Phone Number</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+            </div>
+        </div>
+
         <!-- /.panel .chat-panel -->
 
         <!-- /.col-lg-4 -->

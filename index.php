@@ -81,9 +81,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="intro-message">
-                        <h1>Hello</h1>
-
-                        <h3>Connecting your loved ones together </h3>
+                        <h1>SeniorOk</h1>
+                        <h3>Connections enabling platforms and data analytics </h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
