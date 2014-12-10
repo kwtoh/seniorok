@@ -20,22 +20,33 @@ function checkSession()
     });
 }
 
-function newMessage(message){
-
+function newMessage(){
+    var message = $('#btn-input').val();
+    var newmessage = "<li class='left clearfix'><span class='chat-img pull-left'><img src='img/users/admin.png' alt='User Avatar' class='img-circle'/></span><div class='chat-body clearfix'><div class='header'><strong class='primary-font'>mary</strong><small class='pull-right text-muted'><i class='fa fa-clock-o fa-fw'></i> 7 Aug 2014, 14:00 </small></div><p>"+message+"</p></div></li>";
+    $('#chatbox-messages').append(newmessage);
 
 }
 
 function ViewStats()
 {
     $('#patient-info').hide();
+    $('#today-stats').hide();
     $('#info-container').show();
     changeView("Profile");
+}
+
+function ViewTodayStats()
+{
+    $('#patient-info').hide();
+    $('#info-container').hide();
+    $('#today-stats').show();
 }
 
 function backPatientInfo()
 {
     $('#patient-info').show();
     $('#info-container').hide();
+    $('#today-stats').hide();
 }
 
 function changeView(view){
@@ -52,7 +63,7 @@ function changeView(view){
         case "Stats":
             {
                 $('#admin-dropdown-text').html("Stats <span class='caret'></span>");
-                $('#dropdown-header').html("<h1>Stats</h1>");
+                $('#dropdown-header').html("<span style='display:inline;'><button class='btn btn-default btn-lg' onclick='backPatientInfo();'><span class='glyphicon glyphicon-chevron-left'></span></button></span><h1>Stats</h1>");
                 $('#chat-messages').hide();
                 $('#charts').show();
                 $('#customer-profile').hide();
@@ -61,7 +72,7 @@ function changeView(view){
         case "Messages":
             {
                 $('#admin-dropdown-text').html("Messages <span class='caret'></span>");
-                $('#dropdown-header').html("<h1>Messages</h1>");
+                $('#dropdown-header').html("<span style='display:inline;'><button class='btn btn-default btn-lg' onclick='backPatientInfo();'><span class='glyphicon glyphicon-chevron-left'></span></button></span><h1>Messages</h1>");
                 $('#chat-messages').show();
                 $('#charts').hide();
                 $('#customer-profile').hide();

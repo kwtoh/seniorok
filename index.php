@@ -217,7 +217,9 @@
                             <ul class="list-inline intro-social-buttons">
                                 <li>
                                     <input class="btn btn-primary" id="submitbutton" type="button" value="Login" name="submit" onclick='loginRequest($("#_email").val(), $("#_password").val());'/>
-
+                                </li>
+                                <li>
+                                    <input class="btn btn-default" id="submitbutton" type="button" value="Register" name="submit" onclick=''/>
                                 </li>
                             </ul>
                             <div id="comments">

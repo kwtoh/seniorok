@@ -91,53 +91,46 @@
                 <h1>Patients Under You</h1>
             </div>
             <div class="table-responsive">
-                <table id="mytable" class="table table-striped">
+                <table id="mytable" class="table table-hover">
                     <thead>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Address</th>
+                        <th>Name</th>
+                        <th>Today's Stats</th>
                         <th>View</th>
                         <th>Delete</th>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Margaret</td>
-                            <td>Tan</td>
-                            <td>23 Hotel Ave 3</td>
-                            <td><button class="btn btn-primary btn-xs" onclick="ViewStats();" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td>Margaret Tan Mei Ling</td>
+                            <td><button class="btn btn-default btn-xs" onclick="ViewTodayStats();" data-title="Stats" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-list-alt"></span></button></td>
+                            <td><button class="btn btn-primary btn-xs" onclick="ViewStats();" data-title="View" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                         <tr>
                             <td>Mohsin</td>
-                            <td>Irshad</td>
-                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-default btn-xs" data-title="Stats" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-list-alt"></span></button></td>
+                            <td><button class="btn btn-primary btn-xs" data-title="View" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                         <tr>
                             <td>Mohsin</td>
-                            <td>Irshad</td>
-                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-default btn-xs" data-title="Stats" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-list-alt"></span></button></td>
+                            <td><button class="btn btn-primary btn-xs" data-title="View" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                         <tr>
                             <td>Mohsin</td>
-                            <td>Irshad</td>
-                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-default btn-xs" data-title="Stats" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-list-alt"></span></button></td>
+                            <td><button class="btn btn-primary btn-xs" data-title="View" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                         <tr>
                             <td>Mohsin</td>
-                            <td>Irshad</td>
-                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-default btn-xs" data-title="Stats" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-list-alt"></span></button></td>
+                            <td><button class="btn btn-primary btn-xs" data-title="View" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
                             <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></td>
                         </tr>
                         <tr>
                             <td><a href=""><span class="glyphicon glyphicon-plus"></span><span> Add new patient</span></a></td>
-                            <td></td>
                             <td></td>
                             <td></td>
                             <td></td>
@@ -161,7 +154,7 @@
           </ul>
         </div>
         <!-- /.row -->
-        <div class="row">
+        <div class="row" id="inner-container">
             <div id="charts" style="display:none";>
                 <div class="col-lg-6">
                     <h3>Happiness</h3>
@@ -179,11 +172,9 @@
                     </div>
                 </div>
             </div>
-            <!-- /.panel-body -->
+            <!-- /.panel-charts -->
 
-
-            <!-- /.col-lg-8 -->
-
+            <!-- /.panel-chats -->
             <div class="chat-panel panel panel-default" id="chat-messages" style="display:none;">
                 <div class="panel-heading">
                     <i class="fa fa-comments fa-fw"></i>
@@ -194,100 +185,24 @@
                         </a>
                     </div>
                 </div>
-                <!-- /.panel-heading -->
                 <div class="panel-body">
-                    <ul class="chat">
-                        <li class="left clearfix">
-                            <span class="chat-img pull-left">
-                                <img src="img/users/admin.png" alt="User Avatar"
-                                     class="img-circle"/>
-                            </span>
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">admin</strong>
-                                    <small class="pull-right text-muted">
-                                        <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
-                                    </small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                    ornare dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix">
-                            <span class="chat-img pull-left">
-                                <img src="img/users/admin.png" alt="User Avatar"
-                                     class="img-circle"/>
-                            </span>
+                    <ul class="chat" id="chatbox-messages">
 
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">admin</strong>
-                                    <small class="pull-right text-muted">
-                                        <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
-                                    </small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                    ornare dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix">
-                            <span class="chat-img pull-left">
-                                <img src="img/users/admin.png" alt="User Avatar"
-                                     class="img-circle"/>
-                            </span>
-
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">admin</strong>
-                                    <small class="pull-right text-muted">
-                                        <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
-                                    </small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                    ornare dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="left clearfix">
-                            <span class="chat-img pull-left">
-                                <img src="img/users/admin.png" alt="User Avatar"
-                                     class="img-circle"/>
-                            </span>
-
-                            <div class="chat-body clearfix">
-                                <div class="header">
-                                    <strong class="primary-font">admin</strong>
-                                    <small class="pull-right text-muted">
-                                        <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
-                                    </small>
-                                </div>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                    ornare dolor, quis ullamcorper ligula sodales.
-                                </p>
-                            </div>
-                        </li>
                     </ul>
                 </div>
-
-                <!-- /.panel-body -->
                 <div class="panel-footer">
                     <div class="input-group">
-                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..."/>
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
                         <span class="input-group-btn">
-                            <button class="btn btn-warning btn-sm" id="btn-chat">
-                                Send
-                            </button>
+                            <button class="btn btn-warning btn-sm" id="btn-chat" onclick="newMessage($('#btn-input').text());">
+                                Send</button>
                         </span>
                     </div>
                 </div>
             </div>
+            <!-- /.panel-chats -->
 
+            <!-- /.panel-profile -->
             <div class="panel panel-info" id="customer-profile" style="display:none;">
                 <div class="panel-heading">
                     <h3 class="panel-title">Margaret Tan Mei Ling</h3>
@@ -322,7 +237,7 @@
                                 </tr>
                                 <tr>
                                     <td>NOK Email</td>
-                                    <td>Admin@admin.com</td>
+                                    <td>tessa_tan@hotmail.com</td>
                                 </tr>
                                 <tr>
                                     <td>NOK Phone Number</td>
@@ -334,12 +249,28 @@
                   </div>
                 </div>
             </div>
-
-            <!-- /.panel .chat-panel -->
-
-            <!-- /.col-lg-4 -->
+            <!-- /.panel-profile -->
         </div>
     </div>
+    <!-- /.panel-today-stats -->
+    <div id="today-stats" style="display:none";>
+        <span style='display:inline;'><button class='btn btn-default btn-lg' onclick='backPatientInfo();'><span class='glyphicon glyphicon-chevron-left'></span></button></span><span style='display:inline;'><h1>Current Stats</h1></span>
+        <div class="col-lg-6">
+            <h3>Happiness Now</h3>
+            <!-- /.panel-heading -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="range range-success">
+                            <input type="range" name="range" min="1" max="100" value="50" onchange="rangeSuccess.value=value">
+                            <output id="rangeSuccess">50</output>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.panel-today-stats -->
     <!-- /.row -->
 </div>
 <!-- /#page-wrapper -->
