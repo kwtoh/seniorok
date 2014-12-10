@@ -14,17 +14,28 @@ function checkSession()
             "session.php"
     )
     .done(function(data){
-        if(!data['session'])
-        {
-            window.location.replace("index.php");
-        }
-        else
-        {
             document.getElementById("cur_user").innerHTML = data['username'];
             var img_link = "img/users/" + data['img_src'];
             $('#cur_user_img').attr('src',img_link);
-        }
     });
+}
+
+function newMessage(message){
+
+
+}
+
+function ViewStats()
+{
+    $('#patient-info').hide();
+    $('#info-container').show();
+    changeView("Profile");
+}
+
+function backPatientInfo()
+{
+    $('#patient-info').show();
+    $('#info-container').hide();
 }
 
 function changeView(view){
@@ -32,7 +43,7 @@ function changeView(view){
         case "Profile":
             {
                 $('#admin-dropdown-text').html("Profile <span class='caret'></span>");
-                $('#dropdown-header').html("<h1>Profile</h1>");
+                $('#dropdown-header').html("<span style='display:inline;'><button class='btn btn-default btn-lg' onclick='backPatientInfo();'><span class='glyphicon glyphicon-chevron-left'></span></button></span><span style='display:inline;'><h1>Profile</h1></span>");
                 $('#chat-messages').hide();
                 $('#charts').hide();
                 $('#customer-profile').show();
@@ -65,6 +76,9 @@ function changeView(view){
 //collapses the sidebar on window resize.
 // Sets the min-height of #page-wrapper to window size
 $(function() {
+
+    checkSession();
+
     $(window).bind("load resize", function() {
         topOffset = 50;
         width = (this.window.innerWidth > 0) ? this.window.innerWidth : this.screen.width;

@@ -6,6 +6,8 @@
     {
        header("Location:index.php");
     }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -83,188 +85,260 @@
 </nav>
 
 <div id="page-wrapper">
-
-    <div class="page-header" id="dropdown-header">
-        <h1>Stats</h1>
-    </div>
-    <div class="btn-group" id="admin-dropdown">
-      <button type="button" class="btn btn-default dropdown-toggle" id="admin-dropdown-text" data-toggle="dropdown" aria-expanded="false">
-        Stats <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" role="menu">
-        <li><a href="javascript:void(0);" onclick="changeView('Profile')">Profile</a></li>
-        <li><a href="javascript:void(0);" onclick="changeView('Stats');">Stats</a></li>
-        <li><a href="javascript:void(0);" onclick="changeView('Messages');">Messages</a></li>
-      </ul>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        <div id="charts">
-            <div class="col-lg-6">
-                <h3>Happiness</h3>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div id="morris-area-chart"></div>
-                </div>
+    <div id="patient-info">
+        <div class="col-md-12">
+            <div class="page-header">
+                <h1>Patients Under You</h1>
             </div>
-
-            <div class="col-lg-6">
-                <h3>Medication Missed</h3>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div id="morris-area-chart2"></div>
-                </div>
-            </div>
-        </div>
-        <!-- /.panel-body -->
-
-
-        <!-- /.col-lg-8 -->
-
-        <div class="chat-panel panel panel-default" id="chat-messages" style="display:none;">
-            <div class="panel-heading">
-                <i class="fa fa-comments fa-fw"></i>
-                Chat
-                <div class="btn-group pull-right">
-                    <a href="#">
-                        <i class="fa fa-refresh fa-fw"></i>
-                    </a>
-                </div>
-            </div>
-            <!-- /.panel-heading -->
-            <div class="panel-body">
-                <ul class="chat">
-                    <li class="left clearfix">
-                        <span class="chat-img pull-left">
-                            <img src="img/users/admin.png" alt="User Avatar"
-                                 class="img-circle"/>
-                        </span>
-                        <div class="chat-body clearfix">
-                            <div class="header">
-                                <strong class="primary-font">Jack Sparrow</strong>
-                                <small class="pull-right text-muted">
-                                    <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
-                                </small>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                ornare dolor, quis ullamcorper ligula sodales.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="right clearfix">
-                        <span class="chat-img pull-right">
-                            <img src="img/users/user-profilepicture-1.jpg" alt="User Avatar"
-                                 class="img-circle"/>
-                        </span>
-
-                        <div class="chat-body clearfix">
-                            <div class="header">
-                                <small class=" text-muted">
-                                    <i class="fa fa-clock-o fa-fw"></i> 13 mins ago
-                                </small>
-                                <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                ornare dolor, quis ullamcorper ligula sodales.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="left clearfix">
-                        <span class="chat-img pull-left">
-                            <img src="img/users/admin.png" alt="User Avatar"
-                                 class="img-circle"/>
-                        </span>
-
-                        <div class="chat-body clearfix">
-                            <div class="header">
-                                <strong class="primary-font">Jack Sparrow</strong>
-                                <small class="pull-right text-muted">
-                                    <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
-                                </small>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                ornare dolor, quis ullamcorper ligula sodales.
-                            </p>
-                        </div>
-                    </li>
-                    <li class="right clearfix">
-                                    <span class="chat-img pull-right">
-                                        <img src="img/users/user-profilepicture-1.jpg" alt="User Avatar"
-                                             class="img-circle"/>
-                                    </span>
-
-                        <div class="chat-body clearfix">
-                            <div class="header">
-                                <small class=" text-muted">
-                                    <i class="fa fa-clock-o fa-fw"></i> 15 mins ago
-                                </small>
-                                <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                            </div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
-                                ornare dolor, quis ullamcorper ligula sodales.
-                            </p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- /.panel-body -->
-            <div class="panel-footer">
-                <div class="input-group">
-                    <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..."/>
-                    <span class="input-group-btn">
-                        <button class="btn btn-warning btn-sm" id="btn-chat">
-                            Send
-                        </button>
-                    </span>
-                </div>
+            <div class="table-responsive">
+                <table id="mytable" class="table table-striped">
+                    <thead>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Address</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Margaret</td>
+                            <td>Tan</td>
+                            <td>23 Hotel Ave 3</td>
+                            <td><button class="btn btn-primary btn-xs" onclick="ViewStats();" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td>Mohsin</td>
+                            <td>Irshad</td>
+                            <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                            <td><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-eye-open"></span></button></td>
+                            <td><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete"><span class="glyphicon glyphicon-trash"></span></button></td>
+                        </tr>
+                        <tr>
+                            <td><a href=""><span class="glyphicon glyphicon-plus"></span><span> Add new patient</span></a></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-
-        <div class="panel panel-info" id="customer-profile" style="display:none;">
-            <div class="panel-heading">
-                <h3 class="panel-title">Margaret Tan Mei Ling</h3>
-            </div>
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-3 col-lg-3 " align="center">
-                        <img alt="User Pic" src="" class="img-circle">
+    </div>
+    <div id="info-container" style="display:none";>
+        <div class="page-header" id="dropdown-header">
+        </div>
+        <div class="btn-group" id="admin-dropdown">
+          <button type="button" class="btn btn-default dropdown-toggle" id="admin-dropdown-text" data-toggle="dropdown" aria-expanded="false">
+            Stats <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="javascript:void(0);" onclick="changeView('Profile')">Profile</a></li>
+            <li><a href="javascript:void(0);" onclick="changeView('Stats');">Stats</a></li>
+            <li><a href="javascript:void(0);" onclick="changeView('Messages');">Messages</a></li>
+          </ul>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div id="charts" style="display:none";>
+                <div class="col-lg-6">
+                    <h3>Happiness</h3>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="morris-area-chart"></div>
                     </div>
-                <div class=" col-md-9 col-lg-9 ">
-                    <table class="table table-user-information">
-                        <tbody>
-                            <tr>
-                                <td>Age:</td>
-                            </tr>
-                            <tr>
-                                <td>Date of Birth</td>
-                            </tr>
-                            <tr>
-                                <td>Gender</td>
-                            </tr>
-                            <tr>
-                                <td>Home Address</td>
-                            </tr>
-                            <tr>
-                                <td>NOK Email</td>
-                            </tr>
-                            <tr>
-                                <td>NOK Phone Number</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
-              </div>
+
+                <div class="col-lg-6">
+                    <h3>Medication Missed</h3>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div id="morris-area-chart2"></div>
+                    </div>
+                </div>
             </div>
+            <!-- /.panel-body -->
+
+
+            <!-- /.col-lg-8 -->
+
+            <div class="chat-panel panel panel-default" id="chat-messages" style="display:none;">
+                <div class="panel-heading">
+                    <i class="fa fa-comments fa-fw"></i>
+                    Chat
+                    <div class="btn-group pull-right">
+                        <a href="#">
+                            <i class="fa fa-refresh fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <ul class="chat">
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <img src="img/users/admin.png" alt="User Avatar"
+                                     class="img-circle"/>
+                            </span>
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">admin</strong>
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 12 mins ago
+                                    </small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
+                                    ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <img src="img/users/admin.png" alt="User Avatar"
+                                     class="img-circle"/>
+                            </span>
+
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">admin</strong>
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
+                                    </small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
+                                    ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <img src="img/users/admin.png" alt="User Avatar"
+                                     class="img-circle"/>
+                            </span>
+
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">admin</strong>
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
+                                    </small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
+                                    ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="left clearfix">
+                            <span class="chat-img pull-left">
+                                <img src="img/users/admin.png" alt="User Avatar"
+                                     class="img-circle"/>
+                            </span>
+
+                            <div class="chat-body clearfix">
+                                <div class="header">
+                                    <strong class="primary-font">admin</strong>
+                                    <small class="pull-right text-muted">
+                                        <i class="fa fa-clock-o fa-fw"></i> 14 mins ago
+                                    </small>
+                                </div>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum
+                                    ornare dolor, quis ullamcorper ligula sodales.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- /.panel-body -->
+                <div class="panel-footer">
+                    <div class="input-group">
+                        <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..."/>
+                        <span class="input-group-btn">
+                            <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Send
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info" id="customer-profile" style="display:none;">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Margaret Tan Mei Ling</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-md-3 col-lg-3 " align="center">
+                            <img alt="User Pic" src="img/patients/patient_01.jpg" class="img-circle">
+                        </div>
+                    <div class=" col-md-9 col-lg-9 ">
+                        <table class="table table-user-information">
+                            <tbody>
+                                <tr>
+                                    <td>Age:</td>
+                                    <td>74</td>
+                                </tr>
+                                <tr>
+                                    <td>Date of Birth</td>
+                                    <td>12/07/40</td>
+                                </tr>
+                                <tr>
+                                    <td>Gender</td>
+                                    <td>Female</td>
+                                </tr>
+                                <tr>
+                                    <td>Home Address</td>
+                                    <td>23 Hotel Ave 3</td>
+                                </tr>
+                                <tr>
+                                    <td>NOK Name</td>
+                                    <td>Tessa Tan Ting Ling</td>
+                                </tr>
+                                <tr>
+                                    <td>NOK Email</td>
+                                    <td>Admin@admin.com</td>
+                                </tr>
+                                <tr>
+                                    <td>NOK Phone Number</td>
+                                    <td>+6591234204</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- /.panel .chat-panel -->
+
+            <!-- /.col-lg-4 -->
         </div>
-
-        <!-- /.panel .chat-panel -->
-
-        <!-- /.col-lg-4 -->
     </div>
     <!-- /.row -->
 </div>

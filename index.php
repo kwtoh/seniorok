@@ -51,15 +51,15 @@
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="javascript:void(0);"
-                       onclick="loginHide();$('#services').animatescroll({scrollSpeed:2000,easing:'easeInOutQuart'});">Service</a>
+                       onclick="loginHide();$('#services').animatescroll({scrollSpeed:800,easing:'easeInOutQuart'});">Service</a>
                 </li>
                 <li>
                     <a href="javascript:void(0);"
-                       onclick="loginHide();$('#about').animatescroll({scrollSpeed:2000,easing:'easeInOutQuart'});">Team</a>
+                       onclick="loginHide();$('#about').animatescroll({scrollSpeed:800,easing:'easeInOutQuart'});">Team</a>
                 </li>
                 <li>
                     <a href="javascript:void(0);"
-                       onclick="loginHide();$('#contact').animatescroll({scrollSpeed:2000,easing:'easeInOutQuart'});">Contact
+                       onclick="loginHide();$('#contact').animatescroll({scrollSpeed:800,easing:'easeInOutQuart'});">Contact
                         Us</a>
                 </li>
                 <li>
@@ -82,13 +82,13 @@
                 <div class="col-lg-12">
                     <div class="intro-message">
                         <h1>SeniorOk</h1>
-                        <h3>Connections enabling platforms and data analytics </h3>
+                        <h3>Empowering connections with data insight</h3>
                         <hr class="intro-divider">
                         <ul class="list-inline intro-social-buttons">
                             <li>
                                 <a href="javascript:void(0);"
-                                   onclick="$('#services').animatescroll({scrollSpeed:3000,easing:'easeInOutQuart'});"
-                                   class="btn btn-default btn-lg"><span class="network-name">Learn More</span><i
+                                   onclick="$('#services').animatescroll({scrollSpeed:800,easing:'easeInOutQuart'});"
+                                   class="btn btn-default btn-lg"><span class="network-name">Learn More </span><i
                                         class="fa fa-angle-right"></i></a>
                             </li>
                         </ul>
@@ -113,7 +113,6 @@
                         <hr class="section-heading-spacer">
                         <div class="clearfix"></div>
                         <h2 class="section-heading">Our Service</h2>
-
                         <p class="lead">SeniorOk empowers family and day centres to connect and care for their loved
                             ones together. No longer should families need to worry about being out of touch with their
                             family members living away from them. With SeniorOk and its real time updates on your kin’s
@@ -176,13 +175,9 @@
             </section>
         </div>
         <!-- /.container -->
-
     </div>
     <!-- /.content-section-a -->
-
-
 </div>
-
 
 <div id="login">
     <div class="login-header" id="loginheader">
@@ -193,9 +188,7 @@
             <hr class="intro-divider">
             <ul class="list-inline intro-social-buttons">
                 <li>
-                    <a
-                            onclick="loginPanelShow();"
-                            class="btn btn-success btn-lg btn-block">Login</a>
+                    <a onclick="loginPanelShow();" class="btn btn-success btn-lg btn-block">Login</a>
                 </li>
             </ul>
         </div>
@@ -216,14 +209,15 @@
                             <div class="form-group">
                                 <input class="form-control" id="_password" placeholder="Password" type="password">
                             </div>
-                            <div class="checkbox">
+                            <!--<div class="checkbox">
                                 <label>
                                     <input name="remember" type="checkbox" value="Remember Me">Remember Me
                                 </label>
-                            </div>
+                            </div>-->
                             <ul class="list-inline intro-social-buttons">
                                 <li>
                                     <input class="btn btn-primary" id="submitbutton" type="button" value="Login" name="submit" onclick='loginRequest($("#_email").val(), $("#_password").val());'/>
+
                                 </li>
                             </ul>
                             <div id="comments">
