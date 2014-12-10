@@ -254,20 +254,26 @@
     </div>
     <!-- /.panel-today-stats -->
     <div id="today-stats" style="display:none";>
-        <span style='display:inline;'><button class='btn btn-default btn-lg' onclick='backPatientInfo();'><span class='glyphicon glyphicon-chevron-left'></span></button></span><span style='display:inline;'><h1>Current Stats</h1></span>
+        <div class="page-header">
+            <span style='display:inline;'><button class='btn btn-default btn-lg' onclick='backPatientInfo();'><span class='glyphicon glyphicon-chevron-left'></span></button></span><span style='display:inline;'><h1>Current Stats</h1></span>
+        </div>
         <div class="col-lg-6">
-            <h3>Happiness Now</h3>
+            <h3>Mood</h3>
             <!-- /.panel-heading -->
             <div class="container">
                 <div class="row">
                     <div class="col-xs-6">
                         <div class="range range-success">
-                            <input type="range" name="range" min="1" max="100" value="50" onchange="rangeSuccess.value=value">
-                            <output id="rangeSuccess">50</output>
+                            <input type="range" name="range" min="1" max="100" value="0" onchange="rangeSuccess.value=value">
+                            <output id="rangeSuccess">0</output>
                         </div>
+                    </div>
+                    <div class="col-md-4 range-button">
+                        <button class='btn btn-default'>Submit</button>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <!-- /.panel-today-stats -->

@@ -4,38 +4,38 @@ $(function() {
         element: 'morris-area-chart',
         data: [{
             period: '2010 Q1',
-            happiness: 2666,
+            happiness: 5,
         }, {
             period: '2010 Q2',
-            happiness: 2778,
+            happiness: 3,
         }, {
             period: '2010 Q3',
-            happiness: 4912,
+            happiness: 4,
         }, {
             period: '2010 Q4',
-            happiness: 3767,
+            happiness: 5,
         }, {
             period: '2011 Q1',
-            happiness: 6810,
+            happiness: 5,
         }, {
             period: '2011 Q2',
-            happiness: 5670,
+            happiness: 4,
         }, {
             period: '2011 Q3',
-            happiness: 4820,
+            happiness: 3.4,
         }, {
             period: '2011 Q4',
-            happiness: 15073,
+            happiness: 3,
         }, {
             period: '2012 Q1',
-            happiness: 10687,
+            happiness: 5,
         }, {
             period: '2012 Q2',
-            happiness: 8432,
+            happiness: 3,
         }],
         xkey: 'period',
         ykeys: ['happiness'],
-        labels: ['Happiness'],
+        labels: ['Average Happiness'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
@@ -45,58 +45,38 @@ $(function() {
             element: 'morris-area-chart2',
             data: [{
                 period: '2010 Q1',
-                iphone: 2666,
-                ipad: null,
-                itouch: 2647
+                medication_miss: 10,
             }, {
                 period: '2010 Q2',
-                iphone: 2778,
-                ipad: 2294,
-                itouch: 2441
+                medication_miss: 12,
             }, {
                 period: '2010 Q3',
-                iphone: 4912,
-                ipad: 1969,
-                itouch: 2501
+                medication_miss: 16,
             }, {
                 period: '2010 Q4',
-                iphone: 3767,
-                ipad: 3597,
-                itouch: 5689
+                medication_miss: 4,
             }, {
                 period: '2011 Q1',
-                iphone: 6810,
-                ipad: 1914,
-                itouch: 2293
+                medication_miss: 15,
             }, {
                 period: '2011 Q2',
-                iphone: 5670,
-                ipad: 4293,
-                itouch: 1881
+                medication_miss: 20,
             }, {
                 period: '2011 Q3',
-                iphone: 4820,
-                ipad: 3795,
-                itouch: 1588
+                medication_miss: 24,
             }, {
                 period: '2011 Q4',
-                iphone: 15073,
-                ipad: 5967,
-                itouch: 5175
+                medication_miss: 12,
             }, {
                 period: '2012 Q1',
-                iphone: 10687,
-                ipad: 4460,
-                itouch: 2028
+                medication_miss: 15,
             }, {
                 period: '2012 Q2',
-                iphone: 8432,
-                ipad: 5713,
-                itouch: 1791
+                medication_miss: 16,
             }],
             xkey: 'period',
-            ykeys: ['iphone', 'ipad', 'itouch'],
-            labels: ['iPhone', 'iPad', 'iPod Touch'],
+            ykeys: ['medication_miss'],
+            labels: ['Medication miss'],
             pointSize: 2,
             hideHover: 'auto',
             resize: true
